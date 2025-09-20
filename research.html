@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - زجاج سايبر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="templatemo-neural-style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="neural-background"></div>
+    
+    <!-- Header -->
+    <header class="glass">
+        <nav>
+            <a href="index.html" class="logo">NEURALGLASS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="research.html">البحوث</a></li>
+                <li><a href="presentations.html">العروض</a></li>
+                <li><a href="about.html" class="active">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </nav>
+        <div class="mobile-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="research.html">البحوث</a>
+            <a href="presentations.html">العروض</a>
+            <a href="about.html" class="active">من نحن</a>
+            <a href="contact.html">تواصل معنا</a>
+        </div>
+    </header>
+
+    <!-- Research Content -->
+    <section class="research" id="about">
+        <div class="research-container glass">
+            <h1 class="section-title">البحوث بصيغة وورد</h1>
+
+            <!-- شريط البحث -->
+            <div class="search-container glass">
+                <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن بحث...">
+            </div>
+
+            <!-- شبكة البطاقات -->
+            <div id="cardsContainer" class="cards-grid"></div>
+        </div>
+    </section>
+
+    <style>
+    .research-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .search-container {
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 1rem;
+    }
+
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .research-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .research-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(224, 163, 255, 0.2);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(224, 163, 255, 0.3);
+    }
+
+    .research-card h3 {
+        color: #e0a3ff;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .research-card p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+    }
+
+    #loadMoreBtn {
+        display: block;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(135deg, #e0a3ff 0%, #ff69b4 50%, #9370db 100%);
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #loadMoreBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(224, 163, 255, 0.3);
+    }
+
+    #loadMoreBtn:active {
+        transform: translateY(0);
+    }
+    </style>
+
+            <!-- زر عرض المزيد -->
+            <button id="loadMoreBtn" class="load-more-btn glass">عرض المزيد</button>
+        </div>
+    </section>
+
+<script>
+    const researches = [
+    { title: "بحث 1", desc: "تفاصيل مختصرة عن البحث 1" },
+    { title: "بحث 2", desc: "تفاصيل مختصرة عن البحث 2" },
+    { title: "بحث 3", desc: "تفاصيل مختصرة عن البحث 3" },
+    { title: "بحث 4", desc: "تفاصيل مختصرة عن البحث 4" },
+    { title: "بحث 5", desc: "تفاصيل مختصرة عن البحث 5" },
+    { title: "بحث 6", desc: "تفاصيل مختصرة عن البحث 6" },
+    { title: "بحث 7", desc: "تفاصيل مختصرة عن البحث 7" },
+    { title: "بحث 8", desc: "تفاصيل مختصرة عن البحث 8" },
+    { title: "بحث 9", desc: "تفاصيل مختصرة عن البحث 9" },
+    { title: "بحث 10", desc: "تفاصيل مختصرة عن البحث 10" },
+    { title: "بحث 11", desc: "تفاصيل مختصرة عن البحث 11" },
+    { title: "بحث 12", desc: "تفاصيل مختصرة عن البحث 12" },
+    { title: "بحث 13", desc: "تفاصيل مختصرة عن البحث 13" },
+    { title: "بحث 14", desc: "تفاصيل مختصرة عن البحث 14" },
+    { title: "بحث 15", desc: "تفاصيل مختصرة عن البحث 15" }
+  ];
+
+  const cardsContainer = document.getElementById("cardsContainer");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const searchInput = document.getElementById("searchInput");
+
+  let visibleCount = 12; // أول مرة نعرض 12 (3 × 4)
+
+    function renderCards() {
+        cardsContainer.innerHTML = "";
+
+        const filtered = researches.filter(r =>
+            r.title.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+            r.desc.toLowerCase().includes(searchInput.value.toLowerCase())
+        );
+
+        filtered.slice(0, visibleCount).forEach(research => {
+            const card = document.createElement("div");
+            card.className = "research-card glass";
+            card.innerHTML = `
+                <h3>${research.title}</h3>
+                <p>${research.desc}</p>
+            `;
+            cardsContainer.appendChild(card);
+        });
+
+    if (visibleCount >= filtered.length) {
+      loadMoreBtn.style.display = "none";
+    } else {
+      loadMoreBtn.style.display = "block";
+    }
+  }
+
+  searchInput.addEventListener("input", () => {
+    visibleCount = 12;
+    renderCards();
+  });
+
+  loadMoreBtn.addEventListener("click", () => {
+    visibleCount += 12;
+    renderCards();
+  });
+
+  renderCards();
+</script>
+
+
+ <footer>
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="features.html"><span>🔮</span> العصبية</a></li>
+                        <li><a href="matrix.html"><span>🌐</span> المصفوفة</a></li>
+                        <li><a href="timeline.html"><span>⚡</span> التطور</a></li>
+                        <li><a href="contact.html"><span>📨</span> تواصل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>استكشف المزيد</h3>
+                    <ul>
+                        <li><a href="#"><span>�</span> المدونة العصبية</a></li>
+                        <li><a href="#"><span>📚</span> المكتبة الكمية</a></li>
+                        <li><a href="#"><span>🛠️</span> الأدوات والواجهات</a></li>
+                        <li><a href="#"><span>🎓</span> مركز التعلم</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>الدعم والمساعدة</h3>
+                    <ul>
+                        <li><a href="#"><span>❓</span> الأسئلة الشائعة</a></li>
+                        <li><a href="#"><span>🔒</span> سياسة الخصوصية</a></li>
+                        <li><a href="#"><span>📜</span> الشروط والأحكام</a></li>
+                        <li><a href="#"><span>💡</span> مركز المساعدة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact-info">
+                    <h3>تواصل معنا</h3>
+                    <p><span>🏢</span> المقر الرئيسي: برج المصفوفة الكمي</p>
+                    <p><span>📱</span> الهاتف: 1234-567-800</p>
+                    <p><span>📧</span> البريد: info@neuralglass.ai</p>
+                    <div class="social-links">
+                        <a href="#" title="تليجرام" class="neon-glow">�</a>
+                        <a href="#" title="تويتر" class="neon-glow">🐦</a>
+                        <a href="#" title="لينكد إن" class="neon-glow">💼</a>
+                        <a href="#" title="جيت هب" class="neon-glow">⭐</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 نيورال جلاس - جميع الحقوق محفوظة | تصميم: 
+                    <a href="https://templatemo.com" target="_blank" rel="nofollow noopener">TemplateMo</a> | 
+                    تم تطويره بواسطة الذكاء العصبي المتقدم
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="templatemo-neural-scripts.js"></script>
+</body>
+</html>

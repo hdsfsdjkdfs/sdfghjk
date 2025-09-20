@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة الرقمية - نيورال جلاس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="templatemo-neural-style.css" rel="stylesheet">
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="glass">
+        <nav>
+            <a href="index.html" class="logo">نيورال جلاس</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="research.html">البحوث</a></li>
+                <li><a href="presentations.html">العروض التقديمية</a></li>
+                <li><a href="library.html" class="active">المكتبة</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Library Section -->
+    <section class="library-section">
+        <h1>المكتبة الرقمية</h1>
+        <div class="library-container">
+            <div class="search-filters glass">
+                <input type="text" id="searchInput" placeholder="ابحث في المكتبة...">
+                <div class="advanced-filters">
+                    <select id="resourceType">
+                        <option value="">نوع المصدر</option>
+                        <option value="pdf">PDF</option>
+                        <option value="presentation">عرض تقديمي</option>
+                        <option value="document">مستند</option>
+                    </select>
+                    <select id="category">
+                        <option value="">التصنيف</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="library-content">
+                <div class="categories-sidebar glass">
+                    <h3>التصنيفات</h3>
+                    <ul id="categoriesList">
+                        <!-- سيتم تحميل التصنيفات هنا -->
+                    </ul>
+                </div>
+                
+                <div id="resourcesList" class="resources-grid">
+                    <!-- سيتم تحميل المصادر هنا -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 نيورال جلاس. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        const firebaseConfig = {
+            // تكوين Firebase
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
+        const db = firebase.firestore();
+
+        // تحميل المصادر
+        async function loadResources() {
+            const resourcesRef = db.collection('library');
+            const snapshot = await resourcesRef.get();
+            const resourcesList = document.getElementById('resourcesList');
+            
+            snapshot.forEach(doc => {
+                const resource = doc.data();
+                const resourceCard = document.createElement('div');
+                resourceCard.className = 'resource-card glass';
+                resourceCard.innerHTML = `
+                    <div class="resource-icon">${getResourceIcon(resource.type)}</div>
+                    <h3>${resource.title}</h3>
+                    <p>${resource.description}</p>
+                    <div class="resource-meta">
+                        <span>${resource.category}</span>
+                        <span>${resource.type}</span>
+                    </div>
+                    <a href="${resource.fileUrl}" class="download-btn" target="_blank">تحميل</a>
+                `;
+                resourcesList.appendChild(resourceCard);
+            });
+        }
+
+        function getResourceIcon(type) {
+            const icons = {
+                'pdf': '📄',
+                'presentation': '📊',
+                'document': '📑'
+            };
+            return icons[type] || '📁';
+        }
+
+        // تحميل المصادر عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', loadResources);
+    </script>
+</body>
+</html>
