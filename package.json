@@ -1,9 +1,5 @@
 {
   "name": "neural-glass-site",
   "version": "1.0.0",
-  "description": "Neural Glass Static Website",
-  "scripts": {
-    "build": "npm install",
-    "start": "npx serve"
-  }
+  "description": "Neural Glass Static Website"
 }
