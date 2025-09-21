@@ -3,13 +3,7 @@
   "version": "1.0.0",
   "description": "Neural Glass Static Website",
   "scripts": {
-    "build": "echo 'Build complete'",
-    "start": "serve ."
-  },
-  "dependencies": {
-    "serve": "^14.0.0"
-  },
-  "engines": {
-    "node": ">=14"
+    "build": "npm install",
+    "start": "npx serve"
   }
 }
