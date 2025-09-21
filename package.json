@@ -1,0 +1,11 @@
+{
+  "name": "neural-glass-site",
+  "version": "1.0.0",
+  "description": "Neural Glass Static Website",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+}
