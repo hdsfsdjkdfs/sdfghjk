@@ -3,11 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زجاج سايبر - تصميم الواجهة العصبية</title>
+    <title>بحثك جاهز</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="templatemo-neural-style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: center;
+            flex-direction: row-reverse;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: #00f7ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2em;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            flex-direction: row-reverse;
+        }
+        
+        .footer-section ul li a i {
+            color: #00f7ff;
+            font-size: 1em;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #00f7ff;
+            transform: scale(1.05) translateX(-5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 247, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #00f7ff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <!--
 
 TemplateMo 597 Neural Glass
@@ -16,7 +105,107 @@ https://templatemo.com/tm-597-neural-glass
 
 -->
     <style>
-       
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: right;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .quick-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .quick-links-list li {
+            margin-bottom: 15px;
+        }
+        
+        .quick-links-list a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-links-list a i {
+            width: 20px;
+            color: #00f7ff;
+            font-size: 1.1em;
+        }
+        
+        .quick-links-list a:hover {
+            color: #00f7ff;
+            transform: translateX(-5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            font-size: 1.5em;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #00f7ff;
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quick-links-section {
+            text-align: right;
+            direction: rtl;
+            padding: 20px;
+        }
+        .quick-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .quick-links-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .quick-links-list a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .quick-links-list i {
+            font-size: 1.2em;
+            width: 24px;
+            text-align: center;
+            color: #00f7ff;
+        }
+        .quick-links-list a:hover {
+            color: #00f7ff;
+            transform: translateX(-5px);
+        }
     </style>
 </head>
 <body>
@@ -346,58 +535,47 @@ https://templatemo.com/tm-597-neural-glass
 
 
     <!-- Footer -->
-    <footer>
+        <footer>
         <div class="footer-wrapper">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>روابط سريعة</h3>
                     <ul>
-                        <li><a href="features.html"><span>🔮</span> العصبية</a></li>
-                        <li><a href="matrix.html"><span>🌐</span> المصفوفة</a></li>
-                        <li><a href="timeline.html"><span>⚡</span> التطور</a></li>
-                        <li><a href="contact.html"><span>📨</span> تواصل</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i>الرئيسية</a></li>
+                        <li><a href="research.html"><i class="fas fa-search"></i>البحوث</a></li>
+                        <li><a href="presentations.html"><i class="fas fa-desktop"></i>العروض</a></li>
+                        <li><a href="library.html"><i class="fas fa-book"></i>المكتبة</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>استكشف المزيد</h3>
                     <ul>
-                        <li><a href="#"><span>�</span> المدونة العصبية</a></li>
-                        <li><a href="#"><span>📚</span> المكتبة الكمية</a></li>
-                        <li><a href="#"><span>🛠️</span> الأدوات والواجهات</a></li>
-                        <li><a href="#"><span>🎓</span> مركز التعلم</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i>عن البحوث</a></li>
+                        <li><a href="presentations.html"><i class="fas fa-chalkboard-teacher"></i>عن العروض</a></li>
+                        <li><a href="matrix.html"><i class="fas fa-th"></i>المصفوفة</a></li>
+                        <li><a href="features.html"><i class="fas fa-bolt"></i>التطور</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h3>الدعم والمساعدة</h3>
                     <ul>
-                        <li><a href="#"><span>❓</span> الأسئلة الشائعة</a></li>
-                        <li><a href="#"><span>🔒</span> سياسة الخصوصية</a></li>
-                        <li><a href="#"><span>📜</span> الشروط والأحكام</a></li>
-                        <li><a href="#"><span>💡</span> مركز المساعدة</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i>الأسئلة الشائعة</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i>سياسة الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-file-contract"></i>الشروط والأحكام</a></li>
+                        <li><a href="#"><i class="fas fa-headset"></i>مركز المساعدة</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-section contact-info">
+                <div class="footer-section">
                     <h3>تواصل معنا</h3>
-                    <p><span>🏢</span> المقر الرئيسي: برج المصفوفة الكمي</p>
-                    <p><span>📱</span> الهاتف: 1234-567-800</p>
-                    <p><span>📧</span> البريد: info@neuralglass.ai</p>
                     <div class="social-links">
-                        <a href="#" title="تليجرام" class="neon-glow">�</a>
-                        <a href="#" title="تويتر" class="neon-glow">🐦</a>
-                        <a href="#" title="لينكد إن" class="neon-glow">💼</a>
-                        <a href="#" title="جيت هب" class="neon-glow">⭐</a>
+                        <a href="https://facebook.com" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://tiktok.com" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://t.me" title="تليجرام"><i class="fab fa-telegram-plane"></i></a>
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 نيورال جلاس - جميع الحقوق محفوظة | تصميم: 
-                    <a href="https://templatemo.com" target="_blank" rel="nofollow noopener">TemplateMo</a> | 
-                    تم تطويره بواسطة الذكاء العصبي المتقدم
-                </p>
+                <p><i class="fas fa-rocket"></i> بحثك جاهز – جميع الحقوق محفوظة 2025</p>
             </div>
         </div>
     </footer>

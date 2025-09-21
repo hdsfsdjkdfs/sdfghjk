@@ -3,11 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل - زجاج سايبر</title>
+    <title>بحثك جاهز</title>
+    <style>
+        .footer-content {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: right;
+            flex-direction: row-reverse;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: #00f7ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2em;
+            position: relative;
+            display: block;
+            text-align: right;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+            transition: all 0.3s ease;
+            flex-direction: row;
+        }
+        
+        .footer-section ul li a i {
+            color: #00f7ff;
+            font-size: 1em;
+            margin-left: 8px;
+            order: -1;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #00f7ff;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .footer-section {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-section h3 {
+                text-align: right;
+                margin-bottom: 1rem;
+                padding-right: 10px;
+            }
+
+            .footer-section ul {
+                padding-right: 10px;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 12px;
+            }
+
+            .footer-section ul li a {
+                padding: 5px 0;
+            }
+
+            .social-links {
+                padding-right: 10px;
+                margin-top: 0.5rem;
+            }
+
+            .footer-bottom {
+                margin-top: 1rem;
+                padding-top: 1rem;
+            }
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 247, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .social-links {
+                justify-content: flex-end;
+            }
+        }
+        
+        .social-links a:hover {
+            background: #00f7ff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="templatemo-neural-style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="neural-background"></div>
@@ -72,16 +211,47 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="features.html">الشبكات العصبية</a>
-                <a href="matrix.html">بروتوكولات المصفوفة</a>
-                <a href="timeline.html">التطور</a>
-                <a href="contact.html">تواصل</a>
+        <footer>
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i>الرئيسية</a></li>
+                        <li><a href="research.html"><i class="fas fa-search"></i>البحوث</a></li>
+                        <li><a href="presentations.html"><i class="fas fa-desktop"></i>العروض</a></li>
+                        <li><a href="library.html"><i class="fas fa-book"></i>المكتبة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>استكشف المزيد</h3>
+                    <ul>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i>عن البحوث</a></li>
+                        <li><a href="presentations.html"><i class="fas fa-chalkboard-teacher"></i>عن العروض</a></li>
+                        <li><a href="matrix.html"><i class="fas fa-th"></i>المصفوفة</a></li>
+                        <li><a href="features.html"><i class="fas fa-bolt"></i>التطور</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>الدعم والمساعدة</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-question-circle"></i>الأسئلة الشائعة</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i>سياسة الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-file-contract"></i>الشروط والأحكام</a></li>
+                        <li><a href="#"><i class="fas fa-headset"></i>مركز المساعدة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://tiktok.com" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://t.me" title="تليجرام"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 واجهة نيورال جلاس. جميع الحقوق محفوظة.</p>
+            <div class="footer-bottom">
+                <p><i class="fas fa-rocket"></i> بحثك جاهز – جميع الحقوق محفوظة 2025</p>
             </div>
         </div>
     </footer>
